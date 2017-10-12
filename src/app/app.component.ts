@@ -14,8 +14,9 @@ export class AppComponent {
   showThePrice = 0;
  
   onSwitcherClick(){
-    // var el = document.getElementsByClassName('price');
-    var el = $('.price');
+    var currentPrice = $(event.target).parents(".switch-wrapper").prev(".price").toggleClass("active");
+
+    var el = $('.price.active');
     var elPrice = 0;
 
     $(el).each(function () {
@@ -23,10 +24,6 @@ export class AppComponent {
     });
 
     this.showThePrice = elPrice;
-    console.log(elPrice);
   };
   
 }
-
-
-// var type-house = $('#type-house');
